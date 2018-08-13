@@ -2,30 +2,30 @@ package evandgeorge;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
+import evandgeorge.Card.Suits;
 
 public class CardTest {
 
-    Card c1 = new Card(1, 5);
-    Card c2 = new Card(1, 5);
-    Card c3 = new Card(5, 5);
+    //test cards
+    Card c1 = new Card(Suits.DIAMONDS, 5);
+    Card c2 = new Card(Suits.DIAMONDS, 5);
+    Card c3 = new Card(Suits.CLUBS, 5);
 
    @Test
    public void testEquals() {
-        assertTrue(c3.equals(c3));
-        assertTrue(c1.equals(c2));
-        assertTrue(c2.equals(c2));
-        assertTrue(!c1.equals(c3));
+        //test overridden equals() method
+        assertEquals(c3, c3);
+        assertEquals(c1, c2);
+        assertEquals(c2, c2);
+        assertNotEquals(c1, c3);
    }
 
    @Test
    public void testHashCode() {
+       //test overridden hashCode() method
        assertEquals(c1.hashCode(), c2.hashCode());
        assertNotEquals(c1.hashCode(), c3.hashCode());
    }

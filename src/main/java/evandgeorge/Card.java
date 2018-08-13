@@ -5,24 +5,21 @@ import java.util.Objects;
 public class Card {
 
     //ranks of face cards
-    public static int jack = 11;
-    public static int queen = 12;
-    public static int king = 13;
+    public static int JACK = 11;
+    public static int QUEEN = 12;
+    public static int KING = 13;
+    public static int ACE = 14;
 
-    //ranks of aces
-    public static int aceHigh = 14;
-    public static int aceLow = 1;
+    //suits
+    public enum Suits {
+        HEARTS, DIAMONDS, CLUBS, SPADES;
+    }
 
-    //suit keys
-    public static int hearts = 0;
-    public static int diamonds = 1;
-    public static int clubs = 2;
-    public static int spades = 3;
-
-    public int suit;
+    //suit and rank of individual card
+    public Suits suit;
     public int rank;
 
-    public Card(int suit, int rank) {
+    public Card(Suits suit, int rank) {
         this.suit = suit;
         this.rank = rank;
     }
