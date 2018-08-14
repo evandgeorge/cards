@@ -62,11 +62,16 @@ public class Deck {
     }
 
     public Deck splitDeck() {
+        //create new Deck to store bottom half of this deck
         Deck secondDeck = new Deck();
         
+        //number of cards in each half. If the deck pre-split has an even amount of cards both
+        //will be 1/2 of the total. If its odd, then the first deck will be the larger of the two.
         int cardsInFirstDeck = this.size() / 2 + this.size() % 2;
         int cardsInSecondDeck = this.size() / 2;
 
+        //for however many cards need to go in the second deck, remove the first card after the cards
+        //staying in the original (first) deck and add it to the bottom of the new (second) deck
         for(int i = 0; i < cardsInSecondDeck; i++) {
             secondDeck.addToBottom(this.takeFrom(cardsInFirstDeck));
         }
