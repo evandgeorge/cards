@@ -24,6 +24,11 @@ public class Card {
         this.rank = rank;
     }
 
+    //converts card to string representation for debugging
+    public String toString() {
+        return "Rank: " + rank + "Suit: " + suit;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(!(obj instanceof Card))

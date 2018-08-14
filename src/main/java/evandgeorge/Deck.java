@@ -46,8 +46,31 @@ public class Deck {
         return cards.removeLast();
     }
 
+    //takes card from given index and removes it from the list
+    public Card takeFrom(int i) {
+        return cards.remove(i);
+    }
+
     //returns the amount of cards in the deck
     public int size() {
         return cards.size();
+    }
+
+    //returns card at given index
+    public Card cardAt(int i) {
+        return cards.get(i);
+    }
+
+    public Deck splitDeck() {
+        Deck secondDeck = new Deck();
+        
+        int cardsInFirstDeck = this.size() / 2 + this.size() % 2;
+        int cardsInSecondDeck = this.size() / 2;
+
+        for(int i = 0; i < cardsInSecondDeck; i++) {
+            secondDeck.addToBottom(this.takeFrom(cardsInFirstDeck));
+        }
+
+        return secondDeck;
     }
 }
