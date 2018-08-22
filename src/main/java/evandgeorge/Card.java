@@ -5,13 +5,13 @@ import java.util.Objects;
 public class Card {
 
     //ranks of face cards
-    public static int JACK = 11;
-    public static int QUEEN = 12;
-    public static int KING = 13;
-    public static int ACE = 14;
+    public static final int JACK = 11;
+    public static final  int QUEEN = 12;
+    public static final  int KING = 13;
+    public static final  int ACE = 14;
 
     //suits
-    public enum Suits {
+    public static enum Suits {
         HEARTS, DIAMONDS, CLUBS, SPADES;
     }
 
